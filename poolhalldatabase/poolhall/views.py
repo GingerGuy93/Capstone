@@ -29,7 +29,7 @@ class EventList(APIView):
         return Response(serializer.data)
 
     def post(self, request):
-        serializer = EventSerializer(date=request.data)
+        serializer = EventSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
@@ -43,7 +43,7 @@ class TableList(APIView):
         return Response(serializer.data)
 
     def post(self, request):
-        serializer = TableSerializer(date=request.data)
+        serializer = TableSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
