@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import User, Event, Table
+from .models import User, Event, Table, AllTables
 
 
 class UserSerializer(serializers.ModelSerializer):
@@ -18,3 +18,9 @@ class TableSerializer(serializers.ModelSerializer):
     class Meta:
         model = Table
         fields = ['id', 'user', 'time']
+
+
+class AllTableSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = AllTables
+        fields = ['id', 'tableNumber', 'time']

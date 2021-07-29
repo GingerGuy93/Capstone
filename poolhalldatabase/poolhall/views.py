@@ -1,6 +1,6 @@
 from django.shortcuts import render
-from .models import User, Event, Table
-from .serializers import UserSerializer, EventSerializer, TableSerializer
+from .models import User, Event, Table, AllTables
+from .serializers import UserSerializer, EventSerializer, TableSerializer, AllTableSerializer
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
@@ -49,3 +49,16 @@ class TableList(APIView):
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.data, status=status.HTTP_400_BAD_REQUEST)
 
+
+class AllTablesList(APIView):
+    def get(self, request):
+        tables = AllTables.objects.all()
+        serializer = AllTableSerializer(tables, many=True)
+        return Response(serializer.data)
+
+    def post(self, request):
+        serializer = AllTableSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.data, status=status.HTTP_400_BAD_REQUEST)

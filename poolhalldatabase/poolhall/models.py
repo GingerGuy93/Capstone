@@ -19,3 +19,8 @@ class Table(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     time = models.DateTimeField(null=True)
 
+
+class AllTables(models.Model):
+    tableNumber = models.IntegerField()
+    time = models.TimeField()
+
