@@ -7,15 +7,34 @@ import HomePage from "./HomePage/homePage";
 import Contact from "./Contact/contact";
 import Calendar from "./Calendar/calendar";
 import Reservations from "./Reservations/reservations";
+import axios from "axios";
 
 class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            allTable: []
+            table: {},
+            tables: [],
+            available: false,
         }
+        this.getAllTables = this.getAllTables.bind(this);
     };
-    
+    componentDidMount() {
+        this.getAllTables();
+    }
+
+    async getAllTables(){
+        try{
+            let response = await axios.get('http://127.0.0.1:8000/allTables/');
+            this.setState({
+                tables: response.data
+            })
+        }
+        catch(err) {
+            alert(err);
+        }
+    }
+
     render () {
         return (
             <Container>
@@ -29,7 +48,7 @@ class App extends Component {
                             <Route path='/tournaments' render={Tournaments}/>
                             <Route path='/contact' render={Contact}/>
                             <Route path='/calendar' render={Calendar}/>
-                            <Route path='/reservations' render={Reservations}/>
+                            <Route path='/reservations' render={props => <Reservations {...props} tables={this.state.tables}/>}/>
                         </React.Fragment>
                     </Switch>
                 </div>

@@ -9,7 +9,7 @@ const NavbarHome = () => (
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="me-auto">
                     <Nav.Link href="/home">Home</Nav.Link>
-                    <Nav.Link href="/tournaments">Tournaments</Nav.Link>
+                    <Nav.Link href="/tournaments">Events</Nav.Link>
                     <Nav.Link href="/calendar">Calendar</Nav.Link>
                     <Nav.Link href="/reservations">Reserve A Table</Nav.Link>
                     <Nav.Link href="/contact">Contact</Nav.Link>
