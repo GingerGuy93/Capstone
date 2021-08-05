@@ -8,6 +8,8 @@ import Contact from "./Contact/contact";
 import Calendar from "./Calendar/calendar";
 import Reservations from "./Reservations/reservations";
 import axios from "axios";
+import Payment from "./Reservations/payment";
+import './app.css';
 
 class App extends Component {
     constructor(props) {
@@ -49,6 +51,7 @@ class App extends Component {
                             <Route path='/contact' render={Contact}/>
                             <Route path='/calendar' render={Calendar}/>
                             <Route path='/reservations' render={props => <Reservations {...props} tables={this.state.tables}/>}/>
+                            <Route path='/payment' render={Payment}/>
                         </React.Fragment>
                     </Switch>
                 </div>

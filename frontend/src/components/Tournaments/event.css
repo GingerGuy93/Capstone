@@ -1,0 +1,12 @@
+
+
+.events {
+    background-image: url("marcelo-leal-6UeBe2HqziA-unsplash.jpeg");
+    -webkit-background-size:cover;
+    -moz-background-size:cover;
+    -o-background-size: cover;
+    background-size: cover;
+    padding: 145px;
+    text-align: center;
+    color: white;
+}

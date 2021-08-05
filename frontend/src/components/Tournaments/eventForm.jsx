@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import {Form, Button} from "react-bootstrap";
-import{ init } from 'emailjs-com';
+import "./eventform.css";
 import Payment from "../Reservations/payment";
 import EventPayment from "./eventPayments";
+import{ init } from 'emailjs-com';
 init("user_mL7VNNI2xisa4IlaFEnSk");
+
 
 export default class EventForm extends Component {
     constructor(props) {
@@ -58,8 +60,8 @@ export default class EventForm extends Component {
 
 
                 </div>
-                <input type="button" value="Submit" className="btn btn--submit" onClick={this.handleSubmit}/>
-                <Button variant="outline-primary" type='submit' onClick={EventPayment}>Reserve</Button>
+
+                <Button variant="primary" type='submit' onClick={() => (EventPayment) (this.handleSubmit)}>Reserve</Button>
             </Form>
         )
     }

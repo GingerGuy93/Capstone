@@ -1,0 +1,26 @@
+
+h1, h2, h3, h4, h5, h6, ul {
+    text-align: center;
+}
+
+.header {
+    background-image: url("strokers.jpeg");
+    -webkit-background-size:cover;
+    -moz-background-size:cover;
+    -o-background-size: cover;
+    background-size: cover;
+    padding: 200px;
+}
+
+.pic {
+    background-image: url("tables.jpeg");
+    -webkit-background-size:cover;
+    -moz-background-size:cover;
+    -o-background-size: cover;
+    background-size: cover;
+    padding: 600px 30px 75px 100px;
+}
+
+.homePage{
+    background-color: lightgray;
+}

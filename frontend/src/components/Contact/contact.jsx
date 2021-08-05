@@ -6,11 +6,11 @@ class Contact extends Component {
     render() {
         return (
             <React.Fragment>
-                <div className="header">
+                <div className="header"></div>
                     <h1>Contact & Event Request</h1>
-                </div>
+
                 <div className="description">
-                    <h3>If you have any question or concerns with Stroker's Bar & Billiards please do not hesitate to send us a message</h3>
+                    <h4>If you have any question or concerns with Stroker's Bar & Billiards, please do not hesitate to send us a message!</h4>
                 </div>
                 <ContactForm />
             </React.Fragment>

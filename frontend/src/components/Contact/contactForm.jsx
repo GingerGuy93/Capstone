@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {Form, Button} from "react-bootstrap";
 import{ init } from 'emailjs-com';
+import "./contact.css"
 init("user_mL7VNNI2xisa4IlaFEnSk");
 
 export default class ContactForm extends Component {
@@ -25,7 +26,7 @@ export default class ContactForm extends Component {
         this.sendFeedback(templateId, {message_html: this.state.feedback, from_name: this.state.name, reply_to: this.state.email})
     }
 
-    sendFeedback (templateId, variables) {;
+    sendFeedback (templateId, variables) {
         window.emailjs.send(
             'service_lc0nazp', templateId, variables,
             'user_mL7VNNI2xisa4IlaFEnSk'
@@ -38,7 +39,7 @@ export default class ContactForm extends Component {
 
     render() {
         return (
-            <Form className="test-mailing">
+            <Form className="contact">
                 <Form.Group className="name">
                     <Form.Label>Name</Form.Label>
                     <Form.Control type="text" name="name" onChange={this.handleChange} value={this.state.name} required/>
@@ -55,7 +56,7 @@ export default class ContactForm extends Component {
 
 
                 </div>
-                <input type="button" value="Submit" className="btn btn--submit" onClick={this.handleSubmit}/>
+                <Button variant="primary" type='submit' onClick={this.handleSubmit}>Submit</Button>
             </Form>
         )
     }

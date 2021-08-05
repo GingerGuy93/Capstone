@@ -3,8 +3,6 @@ import Modal from "react-bootstrap/Modal";
 import {Button} from "react-bootstrap";
 
 function Payment(props){
-    console.log(props.tables);
-
         return (
             <Modal>
                 <Modal.Title>Payment</Modal.Title>
